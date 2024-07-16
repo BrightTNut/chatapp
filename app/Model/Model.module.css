@@ -1,0 +1,99 @@
+.Model {
+  width: 90%;
+  margin: 3rem auto;
+  background-color: rgb(41, 39, 39);
+  padding: 2rem;
+
+  border-radius: 2rem;
+  margin-bottom: 20%;
+}
+.Model_box {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  align-items: center;
+}
+
+.Model_box_right h1 {
+  font-size: 2rem;
+  padding: 0.1rem;
+  color: rgb(236, 156, 8);
+}
+.Model_box_right h1 span {
+  color: orange;
+  font-family: cursive;
+  font-size: 3rem;
+}
+
+.Model_box_right small {
+  font-size: 1.2rem;
+  color: rgb(236, 156, 8);
+}
+
+.Model_box_right_name_info {
+  display: flex;
+  align-items: center;
+  margin-block: 1rem;
+  gap: 1rem;
+  background-color: rgb(79, 69, 79);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.Model_box_right_name_info input {
+  background-color: transparent;
+  color: orangered;
+  width: 100%;
+  text-transform: uppercase;
+  font-family: "Times New Roman", Times, serif;
+  border-radius: 2px;
+}
+.Model_box_right_name_info input:focus {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1fr;
+}
+.Model_box_right__name_btn {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  color: orangered;
+}
+.Model_box_right__name_btn button {
+  display: flex;
+  outline: none;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1fr;
+  background-color: rgb(79, 69, 79);
+}
+@media only screen and (max-width: 35em) {
+  .Model {
+    margin: 2rem auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0;
+    gap: 2rem;
+  }
+  .Model_box {
+    grid-template-columns: 1fr;
+  }
+  .Model_box_right__name_btn {
+    display: flex;
+    flex-direction: column;
+  }
+  .Model_box_right h1 {
+    font-size: 20px;
+  }
+  .Model_box_right h1 small {
+    font-size: 1fr;
+  }
+}

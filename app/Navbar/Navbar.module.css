@@ -1,0 +1,121 @@
+.Navbar {
+  background-color: grey;
+  display: flex;
+  width: 90%;
+  margin: 3rem auto;
+  position: relative;
+  border-radius: 5rem;
+}
+.Nabar_box {
+  padding: 1rem;
+  display: flex;
+
+  justify-content: space-between;
+}
+.Navbar_box_right_menu {
+  display: flex;
+  gap: 5rem;
+  padding-top: 9px;
+  padding-left: 19px;
+  justify-content: space-around;
+}
+.Navbar_box_right_menu_items {
+  padding: 0.35rem;
+}
+.Navbar_box_right_menu_items_link:hover {
+  opacity: 0.5;
+  width: 100%;
+
+  border-radius: 4rem;
+  color: rgb(226, 192, 104);
+}
+.active_btn {
+  border-bottom: 2px solid orange;
+  color: orange;
+  padding-bottom: 0.5rem;
+}
+
+.NavBar_box_right {
+  display: flex;
+  position: absolute;
+  padding-top: 10px;
+  margin-left: 80%;
+}
+
+.NavBar_box_right_open {
+  display: none;
+}
+
+.NavBar_box_right_connect {
+  padding: 0.3rem;
+  margin-right: 20px;
+  border-radius: 5rem;
+}
+.NavBar_box_right_connect button:hover {
+  background-color: rgb(22, 14, 5);
+  border-radius: 5rem;
+}
+.modelBox {
+  position: fixed;
+  inset: 0 0 0 0;
+  background-color: #292f3f;
+  z-index: 77777777;
+}
+@media only screen and (max-width: 1148px) {
+  .Nabar_box {
+    display: flex;
+    justify-content: space-between;
+  }
+  .NavBar_box_right_open {
+    display: block;
+
+    width: 50rem;
+  }
+  .NavBar_box_right {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 3rem;
+  }
+  .mobile_menu {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    margin: 0;
+    z-index: 111111;
+    background-color: rgb(137, 137, 137);
+    border-radius: 5rem;
+  }
+  .mobile_menu_items_link {
+    padding: 2rem;
+  }
+  .mobile_menu_items {
+    padding: 1rem;
+  }
+  .mobile_menu_btn_close {
+    padding: 3rem;
+    justify-self: center;
+  }
+  .active_btn {
+    z-index: 111111;
+    border-bottom: 2px solid orange;
+    color: orange;
+    padding-bottom: 0.5rem;
+  }
+
+  .Navbar_box_right_menu {
+    margin-top: 10%;
+    position: absolute;
+    z-index: 111111;
+    background-color: rgb(202, 12, 12);
+    width: 100%;
+    flex-direction: column;
+    height: 100rem;
+    inset: 0 0 0 0;
+    padding: 4rem;
+    display: none;
+  }
+  .modalBox {
+    position: absolute;
+    inset: 0 0 -70% 0;
+  }
+}

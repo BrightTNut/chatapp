@@ -1,0 +1,36 @@
+.UserCard_container {
+  width: 80%;
+  padding-left: 5rem;
+}
+
+.UserListCard {
+  display: flex;
+  gap: 2rem;
+  width: 80%;
+}
+.UserCard {
+  border: 2px solid grey;
+  border-radius: 2rem;
+  padding: 1rem;
+  color: orange;
+}
+.UserCard_box button {
+  margin: 1rem;
+  color: aquamarine;
+  background-color: orange;
+  border: 1px solid orange;
+  border-radius: 2rem;
+  padding: 9px;
+  align-self: center;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 35rem) {
+  .UserListCard {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 80%;
+    overflow: hidden;
+  }
+}
