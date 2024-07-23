@@ -65,8 +65,7 @@ export const ChatAppProvider = ({ children }) => {
       const read = await contract.readMessage();
       setFriendMsg(read);
     } catch (error) {
-      setError("Currently You Hav no Message !!");
-      console.log(error);
+      console.log("Currently You Hav no Message !!");
     }
   };
 
@@ -108,7 +107,7 @@ export const ChatAppProvider = ({ children }) => {
   //SEND MESSAGES
   const sendMessage = async ({ msg, address }) => {
     try {
-      if (msg || address) return setError("Please Type Your Message !!");
+      // if (msg || address) return setError("Please Type Your Message !!");
 
       const contract = await connectingWithContract();
       const addMessage = await contract.sendMessage(address, msg);

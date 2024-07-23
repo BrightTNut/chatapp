@@ -6,7 +6,7 @@ import { converTime } from "@/Utils/apiFeature";
 import Loader from "@/app/Loader/Loader";
 import { useRouter } from "next/router";
 const Chat = ({
-  funtionName,
+  functionName,
   readMessage,
   friendMsg,
   account,
@@ -14,6 +14,7 @@ const Chat = ({
   Loading,
   currentUserName,
   currentUserAddress,
+  readUser,
 }) => {
   const [message, setMessage] = useState("");
   const [chatData, setChatData] = useState({
@@ -27,7 +28,12 @@ const Chat = ({
     if (!router.isReady) return;
     setChatData(router.query);
   }, [router.isReady]);
-
+  useEffect(() => {
+    if (chatData.address) {
+      readMessage(chatData.address);
+      readUser(chatData.address);
+    }
+  }, []);
   return (
     <div className={Style.Chat}>
       {currentUserName && currentUserAddress ? (
@@ -87,7 +93,7 @@ const Chat = ({
         {currentUserName && currentUserAddress ? (
           <div className={Style.Chat_box_send}>
             <div className={Style.Chat_box_send_img}>
-              <Image src={images.smile} alt="smile" width={50} height={500} />
+              <Image src={images.smile} alt="smile" width={50} height={50} />
               <input
                 type="text"
                 placeholder="type your message"
