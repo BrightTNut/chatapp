@@ -22,11 +22,16 @@ const UserCard = ({ userLists, addFriends }) => {
                 />
                 <div className={Style.UserCard_box_info}>
                   <h3>Name : {user[0]}</h3>
-                  <p>Address : {user[1].slice(0, 25)}..</p>
+                  <p>Address : {user[1].slice(0, 15)}..</p>
                   <button
-                    onClick={() =>
-                      addFriends({ name: user[0], accountAddress: user[1] })
-                    }
+                    onClick={() => {
+                      const friendData = {
+                        name: user[0],
+                        accountAddress: user[1],
+                      };
+                      // Debug log
+                      addFriends(friendData);
+                    }}
                   >
                     Add Friend
                   </button>

@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Style from "./Card.module.css";
 import images from "../../../assets/index";
+import Image from "next/image";
 const Card = ({ readMessage, el, i, readUser }) => {
   return (
     <div>

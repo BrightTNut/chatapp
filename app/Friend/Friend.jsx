@@ -1,3 +1,4 @@
+"use client";
 import React, { useContext } from "react";
 import Style from "./Friend.module.css";
 import images from "../../assets";
@@ -9,6 +10,7 @@ const Friend = () => {
   const {
     sendMessage,
     account,
+    friendMsg,
     friendLists,
     readMessage,
     userName,
