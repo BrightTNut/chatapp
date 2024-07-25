@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
     <ChatAppProvider>
       <html lang="en">
         <body className={inter.className}>
-          <Navbar />
+          <Navbar className="p-0" />
           {children}
         </body>
       </html>

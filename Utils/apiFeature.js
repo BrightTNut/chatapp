@@ -54,15 +54,15 @@ export const connectingWithContract = async () => {
   }
 };
 
-export const converTime = (time) => {
-  const newTime = new Date(time.toNumber());
+export const convertTime = (time) => {
+  const newTime = new Date(Number(time));
   const realTime =
-    newTime.toHours() +
-    "/" +
-    newTime.toMinutes() +
-    "/" +
+    newTime.getHours() +
+    ":" +
+    newTime.getMinutes() +
+    ":" +
     newTime.getSeconds() +
-    "Date : " +
+    " Date: " +
     newTime.getDate() +
     "/" +
     (newTime.getMonth() + 1) +
