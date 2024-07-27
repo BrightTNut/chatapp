@@ -3,16 +3,17 @@ import { ethers } from "ethers";
 import Web3Modal from "web3modal";
 import chatappabi from "../Context/ChatApp.json";
 import { ChatAppAddress } from "@/Context/constants";
+import { changeNetwork } from "@/Context/constants";
 const ChatAppABI = chatappabi.abi;
 export const CheckIfWalletConnected = async () => {
   try {
     if (!window.ethereum) return console.log("Install MetaMask");
-
+    changeNetwork();
     const accounts = await window.ethereum.request({
       method: "eth_accounts",
     });
     const firstAccount = accounts[0];
-    console.log("Wallet address", firstAccount);
+    // console.log("Wallet address", firstAccount);
     return firstAccount;
   } catch (error) {
     console.log(error);
@@ -22,11 +23,12 @@ export const CheckIfWalletConnected = async () => {
 export const connectWallet = async () => {
   try {
     if (!window.ethereum) return console.log("Install MetaMask");
+    changeNetwork();
     const accounts = await window.ethereum.request({
       method: "eth_requestAccounts",
     });
     const firstAccount = accounts[0];
-    console.log("Wallet address", firstAccount);
+    // console.log("Wallet address", firstAccount);
     return firstAccount;
   } catch (error) {
     console.log(error);

@@ -130,9 +130,8 @@ const Navbar = () => {
             openBox={setOpenModel}
             title="WELCOME TO "
             head="CHAT BUDDY"
-            info="Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt vitae porro voluptatem eligendi quidem ea repudiandae consequuntur repellendus ipsam tempore! Quas quisquam ex nam voluptates sed voluptatem tenetur incidunt? Facere?
-          Quo ipsum esse dolores? Officia, expedita? Praesentium quod facilis laudantium dicta pariatur odit ratione, enim perspiciatis ducimus similique porro voluptatem accusamus minus voluptates! Atque id numquam est labore esse nam."
-            smallInfo="kindley select Your Name..."
+            info="Lorem olores? Officia, expedita? Praesentium quod facilis laudantium dicta pariatur odit ratione, enim perspiciatis ducimus similique porro voluptatem accusamus minus voluptates! Atque id numquam est labore esse nam."
+            smallInfo="kindley Type Your Name..."
             image={images.hero}
             functionName={createAccount}
             address={address}

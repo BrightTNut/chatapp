@@ -35,7 +35,6 @@ export const ChatAppProvider = ({ children }) => {
       //GET ACCOUNT
       const connectedAccount = await connectWallet();
       setAccount(Number(connectedAccount));
-      console.log("andoasndonaonfonasofn");
 
       //GET USER NAME
       const userName = await contract.getUsername(connectedAccount);
@@ -84,8 +83,6 @@ export const ChatAppProvider = ({ children }) => {
       } catch (error) {
         setError(error);
       }
-
-      console.log("foweinfovweuhfboifvubhefikfvubjedkbki");
       setLoading(true);
 
       setLoading(false);
@@ -99,9 +96,9 @@ export const ChatAppProvider = ({ children }) => {
   //ADD YOUR FRIEND
   const addFriends = async ({ name, accountAddress }) => {
     try {
-      console.log("Adding friend:", name, accountAddress);
+      // console.log("Adding friend:", name, accountAddress);
       const friendAddress = accountAddress;
-      console.log("adasd", friendAddress);
+      //console.log("adasd", friendAddress);
       // if (name || Number(friendAddress))
       //   return setError("Please Enter Data !!");
       const contract = await connectingWithContract();
@@ -121,7 +118,7 @@ export const ChatAppProvider = ({ children }) => {
   const sendMessage = async ({ msg, address }) => {
     try {
       // if (msg || address) return setError("Please Type Your Message !!");
-      console.log(msg, address);
+      // console.log(msg, address);
       const contract = await connectingWithContract();
       const addMessage = await contract.sendMessage(address, msg);
       setLoading(true);
