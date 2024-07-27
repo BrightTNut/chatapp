@@ -34,8 +34,8 @@ export const ChatAppProvider = ({ children }) => {
       const contract = await connectingWithContract();
       //GET ACCOUNT
       const connectedAccount = await connectWallet();
-
       setAccount(Number(connectedAccount));
+
       //GET USER NAME
       const userName = await contract.getUsername(connectedAccount);
 
@@ -59,10 +59,11 @@ export const ChatAppProvider = ({ children }) => {
   }, []);
 
   //READ MESSAGE
-  const readMessage = async () => {
+  const readMessage = async (friendAddress) => {
     try {
       const contract = await connectingWithContract();
       const read = await contract.readMessage(friendAddress);
+
       setFriendMsg(read);
     } catch (error) {
       console.log("Currently You Hav no Message !!");
@@ -82,8 +83,6 @@ export const ChatAppProvider = ({ children }) => {
       } catch (error) {
         setError(error);
       }
-
-      console.log("foweinfovweuhfboifvubhefikfvubjedkbki");
       setLoading(true);
 
       setLoading(false);
@@ -97,10 +96,13 @@ export const ChatAppProvider = ({ children }) => {
   //ADD YOUR FRIEND
   const addFriends = async ({ name, accountAddress }) => {
     try {
-      console.log("Adding friend:", name, accountAddress);
-      //  if (name || accountAddress) return setError("Please Enter Data !!");
+      // console.log("Adding friend:", name, accountAddress);
+      const friendAddress = accountAddress;
+      //console.log("adasd", friendAddress);
+      // if (name || Number(friendAddress))
+      //   return setError("Please Enter Data !!");
       const contract = await connectingWithContract();
-      const addMyFriend = await contract.addFriend(accountAddress, name);
+      const addMyFriend = await contract.addFriend(friendAddress, name);
       setLoading(true);
       await addMyFriend.wait();
       setLoading(false);
@@ -116,11 +118,11 @@ export const ChatAppProvider = ({ children }) => {
   const sendMessage = async ({ msg, address }) => {
     try {
       // if (msg || address) return setError("Please Type Your Message !!");
-      console.log(msg, address);
+      // console.log(msg, address);
       const contract = await connectingWithContract();
       const addMessage = await contract.sendMessage(address, msg);
       setLoading(true);
-      await addMessage.wait().then(console.log("Message send"));
+      await addMessage.wait().then(window.location.reload());
       setLoading(false);
     } catch (error) {
       setError("Error During Sending Message !!");

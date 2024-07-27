@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import Style from "./Chat.module.css";
 import images from "../../../assets";
-import { converTime } from "@/Utils/apiFeature";
+import { converTime } from "./import";
 import Loader from "@/app/Loader/Loader";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -36,8 +36,6 @@ const Chat = ({
     }
   }, []);
 
-  console.log("adojanodlncf", chatData);
-
   return (
     <div className={Style.Chat}>
       {currentUserName && currentUserAddress ? (
@@ -45,6 +43,7 @@ const Chat = ({
           <Image src={images.accountName} alt="image" width={70} height={70} />
           <div className={Style.Chat_user_info_box}>
             <h4>Name :{currentUserName}</h4>
+            <br />
             <p className={Style.show}>{currentUserAddress}</p>
           </div>
         </div>
@@ -79,9 +78,9 @@ const Chat = ({
                       height={50}
                     />
                     <span>
-                      {userName}
+                      {el.sender}
                       {""}
-                      <small>Time :{converTime(el.timestamp)}</small>
+                      {/* <small>Time :{converTime(el.timestamp)}</small> */}
                     </span>
                   </div>
                 )}
@@ -97,13 +96,12 @@ const Chat = ({
         {currentUserName && currentUserAddress ? (
           <div className={Style.Chat_box_send}>
             <div className={Style.Chat_box_send_img}>
-              <Image src={images.smile} alt="smile" width={50} height={50} />
               <input
                 type="text"
                 placeholder="type your message"
                 onChange={(e) => setMessage(e.target.value)}
               />
-              <Image src={images.file} alt="file" width={50} height={50} />
+
               {loading == true ? (
                 <Loader />
               ) : (

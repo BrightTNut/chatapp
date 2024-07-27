@@ -35,10 +35,7 @@ function checkUserExists(address pubkey) public view returns(bool){
 
 }
 
- constructor() {
-        // Manually adding a user named "jai" with the contract deployer's address
-        getAllUsers.push(AllUserStruck("jai", msg.sender));
-    }
+
 //create account
 function  createAccount(string calldata name) external{
     require(checkUserExists(msg.sender) == false,"User already exists");
